@@ -10,7 +10,7 @@ public class Pizza {
     private String name;
     //private double price;
     private List<Topping> toppings = new ArrayList<>();
-    private List<String> pizzaLog = new ArrayList<>();
+
     private String size;
 
     //    los tres puntos (...) en el parámetro Topping... toppings del constructor de la clase Pizza tienen
@@ -55,14 +55,9 @@ public class Pizza {
         return price;
     }
 
-    public List<String> getPizzaLog() {
-        return Collections.unmodifiableList(new ArrayList<>(pizzaLog));
-    }
-
     public void addTopping(Topping topping) {
         this.toppings.add(topping);
-        String message = "Added topping: " + topping.getNombre();
-        pizzaLog.add(message);
+
     }
 
     public void removeTopping(int index) {
@@ -106,12 +101,7 @@ public class Pizza {
             }
         }
 
-        String message = "The Pizza is ready!";
-        pizzaLog.add(message); // Registrar mensaje
-
-        System.out.println(message);
-
-
+        System.out.println("The Pizza is ready!");
     }
 
     public void prepareB() {
